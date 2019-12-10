@@ -21,7 +21,7 @@ class PCA_model_classification(object):
         return np.asarray(predicted_list)
     
     def get_projection_loss(self, data, rec_data):        
-        return ((data - rec_data) ** 2)
+        return ((data - rec_data) ** 2) 
 
     def __reconstruct_data(self, data):
         data_transformed = self.pca.transform(data)  
