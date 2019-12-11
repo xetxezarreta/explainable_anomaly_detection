@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
@@ -96,7 +97,7 @@ class ca_xai_regression_model(object):
             error_list.append(error)      
         return np.asarray(error_list)
     
-    def get_projection_loss(self, data, rec_data):   
+    def get_projection_loss(self, in_data, out_data):   
         """
         Calculates the projection loss between input and output data.
 
@@ -107,7 +108,7 @@ class ca_xai_regression_model(object):
         Returns:
         Projection loss.
         """        
-        return ((data - rec_data) ** 2)
+        return ((in_data - out_data) ** 2)
 
     def __reconstruct_data(self, data):
         """
