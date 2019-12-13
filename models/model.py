@@ -1,6 +1,4 @@
-import math
 import numpy as np
-import pandas as pd
 from sklearn.decomposition import PCA
 
 class ca_xai_classification_model(object):
