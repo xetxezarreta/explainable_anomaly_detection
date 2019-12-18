@@ -121,4 +121,4 @@ class ca_xai_regression_model(object):
         """   
         data_transformed = self.model.transform(data)  
         data_reconstructed = self.model.inverse_transform(data_transformed)
-        return data_reconstructed
+        return data_reconstructed 
