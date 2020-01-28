@@ -15,7 +15,7 @@ class ReconstructionErrorModel(object):
 
     def predict(self, data):
         """
-        It does the inverse transformation with the component analysis algorithm, 
+        Makes the inverse transformation with the component analysis algorithm, 
         returning the reconstruction error of each instance.
 
         Parameters
