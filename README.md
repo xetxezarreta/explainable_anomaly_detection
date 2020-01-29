@@ -33,6 +33,7 @@ shap.force_plot(explainer.expected_value, shap_values, X.iloc[i,:])
 
 ![alt text](img/boston_example_pca.png)
 
+
 ### Example with ICA
 
 ```python
