@@ -23,7 +23,7 @@ cols = X.columns.values
 X = pd.DataFrame(StandardScaler().fit_transform(X), columns=cols)
 
 # generate explanation
-model = model = ReconstructionErrorModel(X, model=PCA(n_components=0.95))
+model = ReconstructionErrorModel(X, model=PCA(n_components=0.95))
 explainer = shap.KernelExplainer(model.predict, X)
 
 i = 10
@@ -54,7 +54,7 @@ cols = X.columns.values
 X = pd.DataFrame(StandardScaler().fit_transform(X), columns=cols)
 
 # generate explanation
-model = model = ReconstructionErrorModel(X, model=FastICA(n_components=5))
+model = ReconstructionErrorModel(X, model=FastICA(n_components=5))
 explainer = shap.KernelExplainer(model.predict, X)
 
 i = 10
