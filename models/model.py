@@ -34,6 +34,16 @@ class ReconstructionErrorModel(object):
             error_list.append(error)      
         return np.asarray(error_list)
     
+    def get_model(self):
+        """
+        Returns the model used for reconstruction error.        
+
+        Returns
+        -------
+        The model.
+        """
+        return self.model
+    
     def __get_projection_loss(self, in_data, out_data):   
         """
         Calculates the projection loss between input and output data.
