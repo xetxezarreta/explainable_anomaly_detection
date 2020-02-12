@@ -26,13 +26,10 @@ class ReconstructionErrorModel(object):
         -------
         Prediction of the instances.
         """
-        rec_data = self.__reconstruct_data(data)
-        loss = self.__get_projection_loss(data, rec_data)
-        error_list = []
-        for _, row in loss.iterrows():
-            error = row.mean()       
-            error_list.append(error)      
-        return np.asarray(error_list)
+        in_data = np.asarray(data)       
+        out_data = self.__reconstruct_data(in_data)        
+        errors = np.mean((in_data - out_data)**2, axis=1)
+        return np.asarray(errors)
     
     def get_model(self):
         """
@@ -43,25 +40,10 @@ class ReconstructionErrorModel(object):
         The model.
         """
         return self.model
-    
-    def __get_projection_loss(self, in_data, out_data):   
-        """
-        Calculates the projection loss between input and output data.
-
-        Parameters
-        ----------
-        in_data: Input/Original data.       
-        out_data: Output/Reconstructed data.   
-
-        Returns
-        -------
-        Projection loss.
-        """        
-        return ((in_data - out_data) ** 2)
 
     def __reconstruct_data(self, data):
         """
-        Perform the transform and the inverse transform of the data, 
+        Performs the transform and the inverse transform of the data, 
         trying to reconstruct the original data.
 
         Parameters
