@@ -3,6 +3,10 @@ from sklearn.decomposition import PCA
 from t2 import hotelling_tsquared
 import pytest
 
+# tsquared results are compared with mathworks example
+#     http://www.mathworks.com/help/stats/pca.html#bti6r0c-1
+#     https://stackoverflow.com/questions/25412954/hotellings-t2-scores-in-python
+
 def test_hottellings_t2_values():
     hald_text = """Y       X1      X2      X3      X4
         78.5    7       26      6       60
