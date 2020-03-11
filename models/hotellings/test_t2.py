@@ -29,5 +29,6 @@ def test_hottellings_t2_values():
     ingredients = hald[:, 1:]
     pca = PCA().fit_transform(ingredients)
     result = hotelling_tsquared(pca)   
-    assert np.allclose(expected, result)
 
+    assert len(expected) == len(result)
+    assert np.allclose(expected, result)
