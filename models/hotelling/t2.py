@@ -8,7 +8,7 @@ def hotelling_tsquared(components):
     w = np.linalg.solve(cov, x)
     t2 = (x * w).sum(axis=0)
     return t2
-
+    
 def hotelling_and_qres(X, num_components):
     [U,s,V] = linalg.svd(X)
     P = V[:,0:num_components]
